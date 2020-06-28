@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  <!--Atributo html que fala que o tipo de linguagem da página é português -->
+  <head>
+    <!--No head vão as configurações especiais da página -->
+    <meta charset="UTF-8"/>
+    <!--Serve pra gente configurar os metadados de nosso documento, o UTF-8 aceita caracteres especiais-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Configura o site pra que ele caiba em todos os formatos de telas-->
+
+    {% block title %}
+      <title>Ecoleta</title>
+    {% endblock title %}
+
+    <link href="https://fonts.googleapis.com/css2?fam ily=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="/styles/main.css"/>
+
+    {% block styles %}{% endblock styles %}
+
+    <link rel="stylesheet" href="/styles/responsive.css"/>
+
+  </head>
+  <body>
+
+    <div id="{{ pageId }}">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+    {% block modal %}
+    {% endblock modal %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+
+  </body>
+</html>

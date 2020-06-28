@@ -1,0 +1,189 @@
+#page-create-point {
+  /* A largura máxima normal é de 90px,  mas se chegar a largura de 1100, a página não aumenta mais que isso*/
+  width: 90%;
+  max-width: 1100px;
+  /*alinhamento de caixa pelo lado de fora da caixa */
+  margin: 0 auto; /*faz com que em cima e embaixo seja zero, mas na lateral seja preenchido automaticamente */
+}
+
+#page-create-point header {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-create-point header a {
+  color: var(--title-color); /*definindo cor*/
+  font-weight: bold; /*definindo peso pra fonte*/
+
+  display: flex;
+  align-items: center;
+}
+
+#page-create-point header a span {
+  margin-right: 16px;
+  background-image: url('../assets/arrow-left.svg');
+
+  display: flex;
+
+  width: 20px;
+  height: 24px;
+}
+
+form {
+  background-color: white;
+
+  margin: 80px auto;
+  /*Preenchimento interno da caixa cadastro de coleta*/
+  /*to jogando o ecoleta lá pra cima da tela*/
+
+  padding: 64px;
+  /*colocando uma bordinha*/
+
+  border-radius: 8px;
+
+  max-width: 730px;
+}
+
+form h1 {
+  font-size: 36px;
+}
+
+form fieldset {
+  margin-top: 64px;
+  border: 0;
+}
+
+form legend {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+form legend h2 {
+  font-size: 24px;
+}
+
+form legend span {
+  font-size: 14px;
+  color: var(--title-color);
+}
+
+form .field {
+  /*o ponto significa que estou pegando o field e os filhos da field*/
+  flex: 1; /*Para dividir a caixa de endereço e número/complemento*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+form .field-group {
+  display: flex;
+}
+
+form input,
+form select {
+  background-color: #f0f0f5;
+
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+
+  border-radius: 8px;
+
+  /*tirar linha preta em volta -  outline: none;*/
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+form .field-group .field + .field {
+  /*Estou dividindo os campos endereõ e número/complemento, colocando uma borda no segundo campo, causando o efeito de separação entre eles*/
+  margin-left: 24px;
+}
+
+form button {
+  width: 260px;
+  height: 56px;
+
+  background-color: var(--primary-color);
+  border-radius: 8px;
+
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+
+  margin-top: 40px;
+
+  transition: 400ms;
+}
+
+form button:hover {
+  /*quando passo o mouse em cima, dá uma acendida no botão*/
+  background-color: #2fb86e;
+}
+
+/*Dando estilo nos Itens de Coleta*/
+.items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /*1fr faz os cálculos para a imagem se ajustar corretamente no layout da tela*/
+  gap: 16px; /*gap é uma propriedade mais inteligente de fazer ar margens do efeito grid entre as imagens*/
+}
+
+.items-grid li {
+  background-color: #f5f5f5;
+  list-style: none;
+
+  border: 2px solid #f5f5f5;
+  border-radius: 8px;
+
+  height: 130px;
+
+  padding: 32px 24px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: center;
+
+  cursor: pointer; /*troca o ponteiro do mouse para uma mãozinha, hehe*/
+}
+
+.items-grid li span {
+  margin-top: 12px;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--title-color);
+}
+
+.items-grid li.selected {
+  background: #e1faec;
+  border: 2px solid #34cb79;
+}
+
+/*to tirando os efeitos de pointer quando clicamos nas imagens, para que a lógica de seleção lá no js, não capture os itens do filho de li*/
+.items-grid li img,
+.items-grid li span {
+  pointer-events: none;
+}

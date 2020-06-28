@@ -1,0 +1,41 @@
+:root {
+  --title-color: #322153;
+  --primary-color: #34cb79;
+  box-sizing: border-box;
+}
+
+/* o asterístico referencia basicamente todos os seletores */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/*BOX MODEL
+Modelo de Caixa
+Toda caixa tem
+largura, altura, espaçamento, preenchimentos, bordar, cor, funco, maneira que é vista pelo html (display)
+isso tudo é organizando dentro de DIV
+*/
+/*o conjunto de códigos dentro de header está modelando o conteúdo de header na tela */
